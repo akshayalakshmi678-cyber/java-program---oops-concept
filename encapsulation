@@ -1,0 +1,21 @@
+class Employee {
+    private String name;
+    private int salary;
+
+    public void setData(String n, int s) {
+        name = n;
+        salary = s;
+    }
+
+    public void getData() {
+        System.out.println(name + " earns " + salary);
+    }
+}
+
+public class EncapsulationDemo {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.setData("Rahul", 50000);
+        e.getData();
+    }
+}

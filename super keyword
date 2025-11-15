@@ -1,0 +1,24 @@
+class Parent {
+    String name = "Parent Class";
+
+    void show() {
+        System.out.println("Parent Method");
+    }
+}
+
+class Child extends Parent {
+    String name = "Child Class";
+
+    void show() {
+        System.out.println(super.name); // parent variable
+        super.show();                   // parent method
+        System.out.println(this.name);  // child variable
+    }
+}
+
+public class SuperKeywordDemo {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.show();
+    }
+}

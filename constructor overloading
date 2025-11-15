@@ -1,0 +1,23 @@
+class Box {
+    int width, height, depth;
+
+    Box() { width = height = depth = 1; }
+    Box(int a) { width = height = depth = a; }
+    Box(int w, int h, int d) { width = w; height = h; depth = d; }
+
+    void volume() {
+        System.out.println("Volume = " + (width * height * depth));
+    }
+}
+
+public class ConstructorOverloading {
+    public static void main(String[] args) {
+        Box b1 = new Box();
+        Box b2 = new Box(5);
+        Box b3 = new Box(2, 3, 4);
+
+        b1.volume();
+        b2.volume();
+        b3.volume();
+    }
+}

@@ -1,0 +1,22 @@
+class College {
+    static String collegeName = "ABC College";
+    String studentName;
+
+    College(String name) {
+        studentName = name;
+    }
+
+    void show() {
+        System.out.println(studentName + " - " + collegeName);
+    }
+}
+
+public class StaticDemo {
+    public static void main(String[] args) {
+        College s1 = new College("John");
+        College s2 = new College("Riya");
+
+        s1.show();
+        s2.show();
+    }
+}
