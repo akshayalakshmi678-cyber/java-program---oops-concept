@@ -1,0 +1,18 @@
+import java.io.*;
+
+public class ThrowsDemo {
+
+    static void readFile(String fileName) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        System.out.println(reader.readLine());
+        reader.close();
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile("nonexistentfile.txt");
+        } catch (IOException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
