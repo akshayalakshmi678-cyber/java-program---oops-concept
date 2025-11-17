@@ -1,0 +1,12 @@
+abstract class Vehicle {
+    abstract void move();
+}
+class Bike extends Vehicle {
+    void move() { System.out.println("Bike moves on two wheels"); }
+}
+public class Main {
+    public static void main(String[] args){
+        Vehicle v = new Bike();
+        v.move();
+    }
+}

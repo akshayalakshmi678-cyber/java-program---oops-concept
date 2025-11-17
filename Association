@@ -1,0 +1,15 @@
+class Engine {
+    void start() { System.out.println("Engine started"); }
+}
+class Car {
+    Engine engine;
+    Car(Engine e) { this.engine = e; }
+    void startCar() { engine.start(); }
+}
+public class Main {
+    public static void main(String[] args){
+        Engine e = new Engine();
+        Car c = new Car(e);
+        c.startCar();
+    }
+}

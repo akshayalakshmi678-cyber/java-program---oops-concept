@@ -1,0 +1,9 @@
+import java.util.List;
+class Department {
+    String name;
+    Department(String name) { this.name = name; }
+}
+class University {
+    List<Department> departments;
+    University(List<Department> depts) { this.departments = depts; }
+}

@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+class Student {
+    private int id;
+    private String name;
+    private String grade;
+
+    public Student(int id, String name, String grade) {
+        this.id = id; this.name = name; this.grade = grade;
+    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getGrade() { return grade; }
+    public void setGrade(String grade) { this.grade = grade; }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Name: " + name + ", Grade: " + grade;
+    }
+}
+
+class StudentManagementSystem {
+    private ArrayList<Student> students = new ArrayList<>();
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+    public void viewStudents() {
+        students.forEach(student -> System.out.println(student));
+    }
+    public void updateStudent(int id, String newName, String newGrade) {
+        for (Student s : students) {
+            if (s.getId() == id) {
+                s.setName(newName);
+                s.setGrade(newGrade);
+                break;
+            }
+        }
+    }
+    public void deleteStudent(int id) {
+        students.removeIf(s -> s.getId() == id);
+    }
+    public Student searchStudentByName(String name) {
+        for (Student s : students) {
+            if (s.getName().equalsIgnoreCase(name)) {
+                return s;
+            }
+        }
+        return null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        StudentManagementSystem sms = new StudentManagement

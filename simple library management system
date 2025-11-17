@@ -1,0 +1,45 @@
+import java.util.HashMap;
+
+class Library {
+    private HashMap<String, Boolean> books = new HashMap<>();
+
+    void addBook(String title) {
+        books.put(title, true);  // true means available
+    }
+    boolean borrowBook(String title) {
+        if(books.getOrDefault(title, false)) {
+            books.put(title, false);
+            System.out.println("You borrowed: " + title);
+            return true;
+        }
+        System.out.println("Book not available");
+        return false;
+    }
+    void returnBook(String title) {
+        if(books.containsKey(title)) {
+            books.put(title, true);
+            System.out.println("You returned: " + title);
+        } else {
+            System.out.println("This book doesn't belong to library");
+        }
+    }
+    void displayBooks() {
+        System.out.println("Library Books and Availability:");
+        for(String title : books.keySet()) {
+            System.out.println(title + " - " + (books.get(title) ? "Available" : "Borrowed"));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Library lib = new Library();
+        lib.addBook("Java Basics");
+        lib.addBook("OOP Concepts");
+        lib.displayBooks();
+        lib.borrowBook("Java Basics");
+        lib.displayBooks();
+        lib.returnBook("Java Basics");
+        lib.displayBooks();
+    }
+}

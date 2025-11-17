@@ -1,0 +1,13 @@
+class Heart {
+    void beat() { System.out.println("Heart is beating"); }
+}
+class Person {
+    private Heart heart = new Heart();
+    void startHeartbeat() { heart.beat(); }
+}
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.startHeartbeat();
+    }
+}
